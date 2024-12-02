@@ -1,2 +1,49 @@
 <app-navbar />
+
+<div class="w-full my-10 px-2.5 sm:px-16">
+    <h1 class="font-bold">Produtos</h1>
+
+    <div class="mt-4 space-x-3">
+        <button *ngFor="let filter of filters"
+            class="inline-flex items-center px-4 py-1 rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
+            {{ filter.label }}
+        </button>
+    </div>
+
+    <div class="mt-4 grid grid-cols-4 gap-6 h-full">
+        <div class="backdrop-blur-lg overflow-hidden w-full h-full">
+            <div class="bg-red-500 rounded-lg p-4 h-full max-h-60">
+                <img src="https://wiki.cs.money/_next/static/images/ak-47-714163b7deae61b72d41d3b9c3cd8385.png"
+                    alt="Olá" class="w-full">
+            </div>
+            <div class="space-y-2 mt-2">
+                <p class="text-xl font-bold">Ak-47</p>
+                <span class="text-sm">Rifle, TR</span>
+
+                <div class="flex justify-between items-center">
+                    <div class="space-y-1">
+                        <p class="font-medium text-xl">$83 <span class="text-sm text-muted-foreground">/price</span></p>
+                        <div class="text-xs space-x-0.5">
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button class="h-10 w-10 rounded-full flex items-center justify-center">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <button class="h-10 w-10 rounded-full bg-red-400 flex items-center justify-center">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <router-outlet />

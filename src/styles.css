@@ -61,6 +61,10 @@
     }
 }
 
+.host {
+    display: flex
+}
+
 @layer base {
     * {
         @apply border-border;
@@ -95,4 +99,9 @@
 
 html, *, body {
     font-family: "Red Hat Display";
+}
+
+html,
+body {
+  height: 100%;
 }
