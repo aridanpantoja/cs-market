@@ -1,0 +1,40 @@
+<header class="flex px-4 sm:px-16 w-full  items-center justify-between h-16 border-b sticky inset-x-0 top-0 z-50 ">
+    <a href="/" class="hover:cursor translate-x-1/2 sm:translate-x-0 absolute sm:static right-1/2 text-foreground">
+        <img src="https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/global/logo_cs_sm_blk.svg"
+            alt="Logo do CS Market" class="h-6">
+    </a>
+
+    <nav class="hidden sm:block">
+        <ul class="flex gap-8">
+            <li *ngFor="let link of links">
+                <a [href]="link.url">{{ link.label }}</a>
+            </li>
+
+            <li>
+                <a>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="block sm:hidden w-full">
+        <div class="flex items-center justify-between text-xl w-full">
+            <button (click)="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+
+        <nav *ngIf="isMenuOpen" class="absolute top-16 bg-gray-100 py-4 inset-x-0 w-full px-4">
+            <ul class="flex flex-col gap-4">
+                <li *ngFor="let link of links">
+                    <a [href]="link.url">{{ link.label }}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
