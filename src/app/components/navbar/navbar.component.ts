@@ -1,21 +1,22 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   links = [
-    { label: 'Home', url: '/' },
-    { label: 'About', url: '/about' },
-    { label: 'Contact', url: '/contact' },
+    { label: 'Produtos', url: '/products', authRequired: false },
+    { label: 'Sobre', url: '/about', authRequired: false },
+    { label: 'Dashboard', url: '/dashboard', authRequired: true },
   ]
 
   isMenuOpen = false
+  isAuthenticated = false
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen
