@@ -1,0 +1,33 @@
+<div class="mt-4 grid grid-cols-4 gap-6 h-full">
+    <div *ngFor="let item of products" class="backdrop-blur-lg overflow-hidden w-full h-full">
+        <div class="bg-red-500 rounded-lg p-4">
+            <img [src]="item.itemimage" alt="Olá" class="w-full">
+        </div>
+        <div class="space-y-2 mt-2">
+            <p class="text-xl font-bold">{{ item.markethashname }}</p>
+            <span class="text-sm">Rifle, TR</span>
+
+            <div class="flex justify-between items-center">
+                <div class="space-y-1">
+                    <p class="font-medium text-xl">$83 <span class="text-sm text-muted-foreground">/price</span></p>
+                    <div class="text-xs space-x-0.5">
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <button class="h-10 w-10 rounded-full flex items-center justify-center">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <button class="h-10 w-10 rounded-full bg-red-400 flex items-center justify-center">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
