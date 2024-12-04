@@ -1,11 +1,11 @@
-<div class="grid grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-    <div *ngFor="let item of products" class="flex flex-col overflow-hidden w-full border rounded-xl p-4 gap-2">
+<div class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div *ngFor="let item of products"
+        class="flex flex-col overflow-hidden w-full border rounded-xl p-4 gap-2 bg-gradient-to-br from-primary/5 to-primary/0">
         <div>
-            <p class="font-bold text-sm">{{ item.itemtype.toUpperCase() }} | {{ item.itemname.toUpperCase() }}
-            </p>
+            <p class="font-bold text-sm">{{ item.markethashname }}</p>
             <div class="flex items-center gap-2">
                 <div [style.background-color]="'#' + item.color" class="w-0.5 h-4"></div>
-                <span class="text-muted-foreground text-xs">{{ item.itemgroup }}</span>
+                <span class="text-muted-foreground text-xs">{{ item.rarity }}</span>
             </div>
         </div>
 
