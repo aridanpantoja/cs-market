@@ -8,4 +8,5 @@ export type ItemType = {
   bordercolor: string
   itemtype: string
   itemname: string
+  rarity: string
 }
