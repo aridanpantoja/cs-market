@@ -1,0 +1,11 @@
+<button (click)="open()">
+    <i class="fa-solid fa-cart-shopping text-xl"></i>
+</button>
+
+<dialog class="backdrop:bg-muted/20 backdrop:backdrop-blur-sm" #modal>
+    <aside class="fixed max-w-96 w-full bg-background border-l inset-y-0 right-0 z-30 p-4 flex flex-col">
+        <button (click)="close()" class="ml-auto">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+    </aside>
+</dialog>
