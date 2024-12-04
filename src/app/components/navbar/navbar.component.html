@@ -14,26 +14,19 @@
     <!-- Navegação -->
     <nav [ngClass]="{
         'hidden sm:flex sm:gap-8': !isMenuOpen,
-        'flex flex-col absolute top-16 inset-x-0 bg-gray-100 p-4': isMenuOpen
+        'flex flex-col absolute top-16 border-b sm:border-b-0 inset-x-0 bg-gray-100 p-4': isMenuOpen
       }" class="sm:static sm:flex-row sm:bg-transparent ml-0 sm:ml-auto">
-        <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8">
-            <ng-container *ngFor="let link of links">
-                <li *ngIf="link.authRequired ? isAuthenticated : true">
-                    <a [href]="link.url" class="hover:underline underline-offset-4">
-                        {{ link.label }}
-                    </a>
-                </li>
-            </ng-container>
+        <ul
+            class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:translate-x-1/2 sm:absolute sm:right-1/2 sm:-translate-y-1/2">
+            <li *ngFor="let link of links">
+                <a [href]="link.url" class="hover:underline underline-offset-4">
+                    {{ link.label }}
+                </a>
+            </li>
         </ul>
     </nav>
 
     <div class="ml-8 space-x-6">
-        <a *ngIf="!isAuthenticated" href="/checkout">
-            <i class="fa-solid fa-cart-shopping text-xl"></i>
-        </a>
-
-        <a href="/login">
-            <i class="fa-solid fa-user text-xl"></i>
-        </a>
+        <app-cart />
     </div>
 </header>
