@@ -13,4 +13,8 @@ export class ApíService {
   getProducts(): Observable<any> {
     return this.http.get(`${this.apiUrl}/products`)
   }
+
+  getGroups(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/groups`)
+  }
 }

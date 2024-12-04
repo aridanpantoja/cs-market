@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { Component, OnInit } from '@angular/core'
 import { ApíService } from '../../services/apí.service'
-import { Item } from '../../models/item'
+import { ItemType } from '../../models/item'
 
 @Component({
   selector: 'app-items-list',
@@ -11,14 +11,14 @@ import { Item } from '../../models/item'
   styleUrl: './items-list.component.css',
 })
 export class ItemsListComponent implements OnInit {
-  products: Item[] = []
+  products: ItemType[] = []
 
   constructor(private apiService: ApíService) {}
 
   ngOnInit(): void {
     this.apiService.getProducts().subscribe(
       (data) => {
-        this.products = data // Atribuindo os dados recebidos ao array de produtos
+        this.products = data
       },
       (error) => {
         console.error('Erro ao carregar produtos', error)

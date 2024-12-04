@@ -1,30 +1,24 @@
-<div class="mt-4 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-    <div *ngFor="let item of products" class="backdrop-blur-lg overflow-hidden w-full h-fit border rounded-2xl">
-        <div class="rounded-lg p-4">
-            <img [src]="item.itemimage" alt="Olá" class="w-full">
-        </div>
-
-
-        <div class="flex flex-col p-4 h-full justify-between">
-            <p class="text-xl font-bold">{{ item.markethashname }}</p>
-            <span class="text-sm">{{ item.itemgroup }}</span>
-
-            <div class="flex justify-between items-center h-full">
-                <div class="space-y-1">
-                    <p class="font-medium text-xl">${{ item.pricelatest }} <span
-                            class="text-sm text-muted-foreground">/price</span></p>
-
-                </div>
-
-                <div class="flex gap-2">
-                    <button class="rounded-full flex items-center justify-center">
-                        <i class="fa-regular fa-heart"></i>
-                    </button>
-                    <button class="rounded-full flex items-center justify-center">
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </button>
-                </div>
+<div class="grid grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+    <div *ngFor="let item of products" class="flex flex-col overflow-hidden w-full border rounded-xl p-4 gap-2">
+        <div>
+            <p class="font-bold text-sm">{{ item.itemtype.toUpperCase() }} | {{ item.itemname.toUpperCase() }}
+            </p>
+            <div class="flex items-center gap-2">
+                <div [style.background-color]="'#' + item.color" class="w-0.5 h-4"></div>
+                <span class="text-muted-foreground text-xs">{{ item.itemgroup }}</span>
             </div>
         </div>
+
+        <div class="rounded-lg flex items-center mx-auto">
+            <img [src]="item.itemimage" alt="Olá" class="w-full max-w-64">
+        </div>
+
+        <div class="flex items-center flex-col gap-2">
+            <p class="font-bold text-xl">${{ item.pricelatest }}</p>
+
+            <button
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs">
+                <i class="fa-solid fa-cart-plus"></i> Adicionar ao Carrinho
+            </button>
+        </div>
     </div>
-</div>
