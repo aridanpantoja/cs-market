@@ -1,11 +1,51 @@
 <button (click)="open()" class="flex items-center">
-    <lucide-angular [img]="ShoppingBag" class="my-icon"></lucide-angular>
+    <lucide-angular [img]="ShoppingBag"></lucide-angular>
 </button>
 
 <dialog class="backdrop:bg-muted/20 backdrop:backdrop-blur-sm" #modal>
-    <aside class="fixed max-w-96 w-full bg-background border-l inset-y-0 right-0 z-30 p-4 flex flex-col">
-        <button (click)="close()" class="ml-auto">
-            <i class="fa-solid fa-xmark text-xl"></i>
-        </button>
+    <aside class="fixed w-2/3 sm:max-w-96 sm:w-full bg-background border-l inset-y-0 right-0 z-30 flex flex-col">
+        <div class="flex w-full items-center justify-between p-3 sm:p-6 border-b">
+            <span class="font-medium">Sua sacola de compras</span>
+            <button (click)="close()">
+                <lucide-angular [img]="X"></lucide-angular>
+            </button>
+        </div>
+
+
+        <div class="flex flex-col items-center justify-center h-full">
+            <ng-container *ngIf="items.length; else noItens">
+                <ul class="p-3 sm:p-6 flex flex-col w-full items-start flex-grow">
+                    <li *ngFor="let item of items" class="flex gap-2 items-center">
+                        <div class="w-24 h-24 flex items-center justify-center flex-shrink-0 rounded-lg border">
+                            <img [src]="item.itemimage" alt="" class=" object-cover" />
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            {{ item.markethashname }}
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="flex flex-col gap-2 items-center p-3 sm:p-6 w-full mt-top">
+                    <button
+                        class="flex items-center justify-center bg-primary text-primary-foreground shadow hover:bg-primary/90 text-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 h-10 border-transparent w-full">
+                        Finalizar compra
+                    </button>
+
+                    <button
+                        class="flex items-center justify-center border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground text-center rounded-md font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 h-10  w-full">
+                        Continuar comprando
+                    </button>
+                </div>
+            </ng-container>
+
+            <ng-template #noItens>
+                <div class="flex flex-col items-center gap-2 p-3 sm:p-6 text-center">
+                    <img src="/sales.svg" alt="" class="w-64 h-64">
+
+                    <p class="text-muted-foreground text-lg">Sua sacola está vazia.<br>Continue comprando 😊</p>
+                </div>
+            </ng-template>
+        </div>
     </aside>
 </dialog>
