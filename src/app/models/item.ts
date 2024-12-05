@@ -6,7 +6,7 @@ export type ItemType = {
   itemgroup: string
   pricelatest: number
   bordercolor: string
-  itemtype: string
+  itemtype: string | null
   itemname: string
   rarity: string
 }
