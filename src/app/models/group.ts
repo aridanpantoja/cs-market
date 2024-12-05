@@ -1,4 +1,4 @@
 export type GroupProps = {
-    label: string
-    slug: string
+    id: number
+    name: string
 }
