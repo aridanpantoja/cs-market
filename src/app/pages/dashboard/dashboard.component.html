@@ -1,0 +1,27 @@
+<form class="text-center max-w-96 space-y-6">
+    <h2 class="text-2xl">Adicionar produto</h2>
+
+    <div class="flex flex-col gap-4 w-full">
+        <input type="text" placeholder="Nome do produto"
+            class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+
+        <input type="number" placeholder="Preço do chaveiro"
+            class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+
+        <input type="number" placeholder="Quantidade no estoque"
+            class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+
+        <select
+            class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 "
+            [selectedIndex]="0">
+            <option value="default" class="font-medium" disabled>Escolha o nível de raridade</option>
+            <ng-container *ngFor="let group of groups">
+                <option [value]="group.value" [style.color]="'#' + group.color" class="font-medium">
+                    {{ group.name }}
+                </option>
+            </ng-container>
+        </select>
+
+        <app-button size="full" type="submit">Criar produto</app-button>
+    </div>
+</form>
