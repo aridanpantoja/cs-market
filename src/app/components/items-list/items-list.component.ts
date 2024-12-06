@@ -1,24 +1,24 @@
 import { CommonModule } from '@angular/common'
 import { Component, OnInit } from '@angular/core'
-import { ApíService } from '../../services/apí.service'
-import { ItemType } from '../../models/item'
-
+import { CharmProps } from '../../models/charm'
+import { ApiService } from '../../services/api.service'
+import { CardComponent } from '../card/card.component'
 @Component({
   selector: 'app-items-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './items-list.component.html',
   styleUrl: './items-list.component.css',
 })
 export class ItemsListComponent implements OnInit {
-  products: ItemType[] = []
+  charms: CharmProps[] = []
 
-  constructor(private apiService: ApíService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getProducts().subscribe(
+    this.apiService.getCharms().subscribe(
       (data) => {
-        this.products = data
+        this.charms = data
       },
       (error) => {
         console.error('Erro ao carregar produtos', error)

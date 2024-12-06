@@ -1,23 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { ApíService } from '../../services/apí.service';
-import { GroupProps } from '../../models/group';
-import { CommonModule } from '@angular/common';
-import { ButtonComponent } from "../../components/button/button.component";
+import { CommonModule } from '@angular/common'
+import { Component, OnInit } from '@angular/core'
+import { ButtonComponent } from '../../components/button/button.component'
+import { RarityProps } from '../../models/rarity'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [CommonModule, ButtonComponent],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent implements OnInit {
-  groups: GroupProps[] = [] 
+  groups: RarityProps[] = []
 
-  constructor(private apiService: ApíService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getGroups().subscribe((data) => {
+    this.apiService.getRarities().subscribe((data) => {
       this.groups = data
     })
   }

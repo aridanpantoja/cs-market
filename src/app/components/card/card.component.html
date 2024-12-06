@@ -1,1 +1,23 @@
-<p>card works!</p>
+<div
+    class="flex flex-col overflow-hidden w-full border rounded-xl p-4 gap-2 bg-gradient-to-br from-primary/5 to-primary/0">
+    <div>
+        <p class="font-bold text-sm">{{ charm?.markethashname }}</p>
+        <div class="flex items-center gap-2">
+            <div [style.background-color]="'#' + color" class="w-0.5 h-4"></div>
+            <span class="text-muted-foreground text-xs">{{ charm?.rarity }}</span>
+        </div>
+    </div>
+
+    <div class="rounded-lg flex items-center mx-auto">
+        <img [src]="charm?.itemimage" alt="Olá" class="w-full max-w-64">
+    </div>
+
+    <div class="flex items-center flex-col gap-2">
+        <p class="font-bold text-xl">${{ charm?.pricelatest }}</p>
+
+        <button (click)="addOnCart()" [disabled]=""
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs">
+            <i class="fa-solid fa-cart-plus"></i> Adicionar ao Carrinho
+        </button>
+    </div>
+</div>

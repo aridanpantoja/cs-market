@@ -1,8 +1,8 @@
-import { Component } from '@angular/core'
-import { ApíService } from '../../services/apí.service'
-import { GroupProps } from '../../models/group'
 import { CommonModule } from '@angular/common'
+import { Component } from '@angular/core'
 import { ItemsListComponent } from '../../components/items-list/items-list.component'
+import { RarityProps } from '../../models/rarity'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'app-home',
@@ -12,13 +12,13 @@ import { ItemsListComponent } from '../../components/items-list/items-list.compo
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  filters: GroupProps[] = []
+  rarities: RarityProps[] = []
 
-  constructor(private apiService: ApíService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getGroups().subscribe((data) => {
-      this.filters = data
+    this.apiService.getRarities().subscribe((data) => {
+      this.rarities = data
     })
   }
 }
