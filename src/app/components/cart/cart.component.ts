@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
-import { LucideAngularModule, ShoppingBag, X } from 'lucide-angular'
+import { LucideAngularModule, Minus, Plus, ShoppingBag, Trash, X } from 'lucide-angular'
 import { ItemType } from '../../models/item'
+import { ButtonComponent } from "../button/button.component";
 
 @Component({
   selector: 'app-cart',
@@ -13,8 +14,23 @@ import { ItemType } from '../../models/item'
 export class CartComponent implements OnInit {
   readonly ShoppingBag = ShoppingBag
   readonly X = X
+  readonly Minus = Minus
+  readonly Plus = Plus
+  readonly Trash = Trash
 
   items: ItemType[] = [
+      {
+        "markethashname": "Charm | Backsplash",
+        "slug": "charm-backsplash",
+        "color": "4b69ff",
+        "bordercolor": "00a000",
+        "pricelatest": 0.26,
+        "itemgroup": "charm",
+        "itemtype": null,
+        "itemname": "backsplash",
+        "rarity": "High Grade",
+        "itemimage": "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXI5BVcJos7pwgSW0nRV-uj6J6cWF5LMhRZibekKFYw7OfBfTgMtdq1kYKIxaGjN-PTxWkF7ZB13L6Z9t-tjgPh8hc6MW36J9TGIwI5ZEaQpAYS66Di9g"
+      },
       {
         "markethashname": "Charm | Backsplash",
         "slug": "charm-backsplash",

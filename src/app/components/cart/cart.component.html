@@ -3,7 +3,8 @@
 </button>
 
 <dialog class="backdrop:bg-muted/20 backdrop:backdrop-blur-sm" #modal>
-    <aside class="fixed w-2/3 sm:max-w-96 sm:w-full bg-background border-l inset-y-0 right-0 z-30 flex flex-col">
+    <aside
+        class="fixed w-4/5 min-[500px]:w-2/3 sm:max-w-96 sm:w-full bg-background border-l inset-y-0 right-0 z-30 flex flex-col">
         <div class="flex w-full items-center justify-between p-3 sm:p-6 border-b">
             <span class="font-medium">Sua sacola de compras</span>
             <button (click)="close()">
@@ -14,14 +15,32 @@
 
         <div class="flex flex-col items-center justify-center h-full">
             <ng-container *ngIf="items.length; else noItens">
-                <ul class="p-3 sm:p-6 flex flex-col w-full items-start flex-grow">
+                <ul class="p-3 sm:p-6 w-full space-y-4 flex-grow">
                     <li *ngFor="let item of items" class="flex gap-2 items-center">
-                        <div class="w-24 h-24 flex items-center justify-center flex-shrink-0 rounded-lg border">
+                        <div
+                            class="size-20 sm:size-24 flex items-center justify-center flex-shrink-0 rounded-lg border">
                             <img [src]="item.itemimage" alt="" class=" object-cover" />
                         </div>
 
-                        <div class="flex items-center justify-between">
-                            {{ item.markethashname }}
+                        <div class="relative w-full">
+                            <p class="text-muted-foreground text-sm sm:text-base font-medium">{{ item.markethashname }}
+                            </p>
+                            <span class="font-semibold text-sm sm:text-base">${{ item.pricelatest }}</span>
+                            <div class="mt-1 flex items-centerg gap-2">
+                                <button>
+                                    <lucide-angular [img]="Minus" class="size-4"></lucide-angular>
+                                </button>
+                                <span class="text-muted-foreground">
+                                    0
+                                </span>
+                                <button>
+                                    <lucide-angular [img]="Plus" class="size-4"></lucide-angular>
+                                </button>
+                            </div>
+
+                            <button class="absolute top-0 right-0">
+                                <lucide-angular [img]="Trash" class="size-4 text-destructive"></lucide-angular>
+                            </button>
                         </div>
                     </li>
                 </ul>
