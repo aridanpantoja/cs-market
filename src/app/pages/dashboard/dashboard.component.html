@@ -1,18 +1,18 @@
-<form class="text-center max-w-96 space-y-6">
+<form class="text-center max-w-96 space-y-6" [formGroup]="charmForm" (ngSubmit)="onSubmit()">
     <h2 class="text-2xl">Adicionar produto</h2>
 
     <div class="flex flex-col gap-4 w-full">
-        <input type="text" placeholder="Nome do produto"
+        <input type="text" placeholder="Nome do produto" formControlName="name" required
             class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
 
-        <input type="number" placeholder="Preço do chaveiro"
+        <input type="number" placeholder="Preço do chaveiro" formControlName="price" required
             class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
 
 
-        <input type="url" placeholder="Imagem do chaveiro"
+        <input type="url" placeholder="Imagem do chaveiro" formControlName="image" required
             class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
 
-        <select
+        <select formControlName="rarity" required
             class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 "
             [selectedIndex]="0">
             <option value="default" class="font-medium" disabled>Escolha o nível de raridade</option>
@@ -23,7 +23,7 @@
             </ng-container>
         </select>
 
-        <input type="number" placeholder="Quantidade no estoque"
+        <input type="number" placeholder="Quantidade no estoque" formControlName="quantity" required
             class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
 
         <app-button size="full" type="submit">Criar produto</app-button>

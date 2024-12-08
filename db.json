@@ -1,9 +1,29 @@
 {
   "rarities": [
-    { "id": 1, "name": "High Grade", "color": "4b69ff", "value": "high_grade" },
-    { "id": 2, "name": "Remarkable", "color": "8847ff", "value": "remarkable" },
-    { "id": 3, "name": "Exotic", "color":"d32ce6", "value": "exotic" },
-    { "id": 4, "name": "Extraordinary", "color": "eb4b4b", "value": "extraordinary" }
+    {
+      "id": "1",
+      "name": "High Grade",
+      "color": "4b69ff",
+      "value": "high_grade"
+    },
+    {
+      "id": "2",
+      "name": "Remarkable",
+      "color": "8847ff",
+      "value": "remarkable"
+    },
+    {
+      "id": "3",
+      "name": "Exotic",
+      "color": "d32ce6",
+      "value": "exotic"
+    },
+    {
+      "id": "4",
+      "name": "Extraordinary",
+      "color": "eb4b4b",
+      "value": "extraordinary"
+    }
   ],
   "charms": [
     {
@@ -75,7 +95,7 @@
       "id": "d1e070da",
       "markethashname": "Charm | Titeenium AWP",
       "slug": "charm-titeenium-awp",
-      "pricelatest": 8.01,  
+      "pricelatest": 8.01,
       "rarity": "Exotic",
       "itemimage": "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXI5BVcJos7pwgSW0nRV-uj6J6cWF5LMhRZibuyOzhzw_zHf3MU6Yy1w9LSz6KhYuqElD8Bv50njL3Do4iliQPt-RdtNWmhcdKTcVM6fxiOrZx3IiXH",
       "quantity": 1
@@ -142,6 +162,15 @@
       "rarity": "Extraordinary",
       "itemimage": "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXI5BVcJos7pwgSQUXDVO2j0MPaXVY7Lgdou7O2OA5u1P_BfzZ95NOhmM6OlK-mNr6ClzIDuMB33bnErNWhjVW3_xZtam33JtSTIAQ9ZFmBq1Pt366x0gF3Wyzi",
       "quantity": 2
+    },
+    {
+      "id": "asdasdasd",
+      "slug": "asdasdasd",
+      "markethashname": "Charm | Backsplash",
+      "pricelatest": 2.01,
+      "itemimage": "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXI5BVcJos7pwgSW0nRV-uj6J6cWF5LMhRZibekKFYw7OfBfTgMtdq1kYKIxaGjN-PTxWkF7ZB13L6Z9t-tjgPh8hc6MW36J9TGIwI5ZEaQpAYS66Di9g",
+      "rarity": "high_grade",
+      "quantity": 4
     }
   ]
 }
