@@ -1,27 +1,52 @@
-# CsMarket
+<h1>CS Market 🔫</h1> 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+<p>
+    <b>A specialized e-commerce platform created for the Santander Coders 2024 final project. The store sells Counter-Strike 2 keychains (skins), offering a sleek design and smooth functionality for an enjoyable user experience.</b>
+</p>
 
-## Development server
+<h2 id="tech-stack">Tech Stack 💻</h2>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[![My Skills](https://skillicons.dev/icons?i=nodejs,angular,ts,html,css,tailwind,git,github)](https://skillicons.dev)
 
-## Code scaffolding
+<h2 id="project-overview">Project Overview 📋</h2>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Getting Started
 
-## Build
+#### 1. Install required dependencies with pnpm
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+pnpm install
+```
 
-## Running unit tests
+#### 2. Running the development server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+pnpm json-server
+```
 
-## Running end-to-end tests
+```bash
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<h2 id="contribute">Contribute 🚀</h2>
 
-## Further help
+If you want to contribute, clone this repo, create your work branch and get your hands dirty!
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+git clone https://github.com/aridanpantoja/cs-market.git
+```
+
+```bash
+git checkout -b feature/NAME
+```
+
+At the end, open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
+
+### Documentations that might help
+
+[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request) |
+[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+
+<h2 id="license">License 📃 </h2>
+
+This project is under [MIT](./LICENSE) license
